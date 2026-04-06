@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Learning Resource Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>📚 Online Learning Resource Hub</h1>
+
+  <h2>Submit a Resource</h2>
+  <form id="resourceForm">
+    <input type="text" id="title" placeholder="Resource Title" required>
+    <input type="text" id="author" placeholder="Author/Creator" required>
+    <input type="url" id="link" placeholder="Resource Link (URL)" required>
+    <select id="category" required>
+      <option value="">Select Category</option>
+      <option value="Programming">Programming</option>
+      <option value="Design">Design</option>
+      <option value="Mathematics">Mathematics</option>
+      <option value="Science">Science</option>
+    </select>
+    <button>Submit Resource</button>
+  </form>
+
+  <h2>Available Resources</h2>
+  <div id="resourceList"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

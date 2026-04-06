@@ -1,0 +1,64 @@
+body {
+  font-family: Arial;
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 600px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #f7971e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e68900;
+}
+
+.certificate {
+  border: 5px solid #333;
+  padding: 30px;
+  margin-top: 20px;
+  background: #fffdf5;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 28px;
+  color: #333;
+}
+
+h4 {
+  font-size: 22px;
+  color: #555;
+}
+
+.date {
+  margin-top: 20px;
+}

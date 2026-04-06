@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>💰 Personal Finance Tracker</h1>
+
+  <form id="form">
+    <input type="text" id="text" placeholder="Enter description" required>
+    <input type="number" id="amount" placeholder="Enter amount" required>
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+    <button>Add Transaction</button>
+  </form>
+
+  <div class="summary">
+    <h2>Balance: ₹<span id="balance">0</span></h2>
+    <p>Income: ₹<span id="income">0</span></p>
+    <p>Expense: ₹<span id="expense">0</span></p>
+  </div>
+
+  <ul id="list"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

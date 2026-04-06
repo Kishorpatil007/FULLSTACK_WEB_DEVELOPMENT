@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Survey Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>📊 Online Survey</h1>
+
+  <form id="surveyForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+
+    <label>How satisfied are you with our service?</label>
+    <select id="satisfaction" required>
+      <option value="">Select</option>
+      <option value="Very Satisfied">Very Satisfied</option>
+      <option value="Satisfied">Satisfied</option>
+      <option value="Neutral">Neutral</option>
+      <option value="Dissatisfied">Dissatisfied</option>
+      <option value="Very Dissatisfied">Very Dissatisfied</option>
+    </select>
+
+    <label>Any suggestions?</label>
+    <textarea id="suggestions" placeholder="Your suggestions"></textarea>
+
+    <button>Submit Survey</button>
+  </form>
+
+  <h3>Survey Responses</h3>
+  <div id="responses"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

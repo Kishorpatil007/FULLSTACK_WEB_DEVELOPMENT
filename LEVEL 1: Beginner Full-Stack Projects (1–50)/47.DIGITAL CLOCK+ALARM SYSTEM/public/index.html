@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock + Alarm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Digital Clock</h1>
+
+    <div id="clock">00:00:00</div>
+
+    <h2>Set Alarm</h2>
+
+    <input type="time" id="alarmTime">
+    <button onclick="setAlarm()">Add Alarm</button>
+
+    <h3>Alarms</h3>
+    <ul id="alarmList"></ul>
+</div>
+
+<audio id="alarmSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

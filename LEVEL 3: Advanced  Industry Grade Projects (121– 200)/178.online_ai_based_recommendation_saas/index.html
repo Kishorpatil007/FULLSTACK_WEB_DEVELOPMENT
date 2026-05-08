@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>178. Online AI-Based Recommendation SaaS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-layout">
+  <aside class="sidebar">
+    <div style="padding:20px;border-bottom:1px solid var(--border);margin-bottom:15px;">
+      <div style="font-size:2rem;margin-bottom:5px;">💡</div>
+      <div style="font-size:.85rem;font-weight:700;color:var(--primary);">Project #178</div>
+      <div style="font-size:.75rem;color:#94a3b8;margin-top:3px;">Online AI-Based Recommendation SaaS</div>
+    </div>
+    <a href="#" class="sidebar-link" data-tab="users">Users</a>
+<a href="#" class="sidebar-link" data-tab="items">Items</a>
+<a href="#" class="sidebar-link" data-tab="models">Models</a>
+<a href="#" class="sidebar-link" data-tab="performance">Performance</a>
+  </aside>
+  <div class="main-content">
+    <div id="tab-overview" class="tab-pane active">
+      <div class="section-header">
+        <h2>💡 Online AI-Based Recommendation SaaS</h2>
+        <button class="btn btn-primary" onclick="openModal('addModal')">+ Add Tenant</button>
+      </div>
+      <p style="color:#94a3b8;margin-bottom:25px;">AI recommendation SaaS with multi-tenant architecture</p>
+      <div class="grid grid-4" style="margin-bottom:30px;">
+        <div class="card stat-card"><div class="stat-number">24K</div><div class="stat-label">👤 Users</div></div>
+<div class="card stat-card"><div class="stat-number">8.4M</div><div class="stat-label">💡 Recommendations</div></div>
+<div class="card stat-card"><div class="stat-number">31%</div><div class="stat-label">🎯 Click Rate</div></div>
+<div class="card stat-card"><div class="stat-number">18%</div><div class="stat-label">📈 Revenue Lift</div></div>
+      </div>
+      <div class="card">
+        <div class="section-header" style="margin-bottom:15px;">
+          <h3 style="font-size:1rem;color:var(--primary);">Tenants List</h3>
+          <input type="text" id="searchInput" placeholder="Search..." style="padding:8px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text);border-radius:8px;font-size:.85rem;width:220px;" oninput="filterTable(this.value)">
+        </div>
+        <table id="dataTable">
+          <thead><tr><th>ID</th><th>NAME</th><th>PLAN</th><th>CONFIG</th><th>ACTIONS</th></tr></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div id="emptyState" class="empty" style="display:none;">
+          <div class="empty-icon">💡</div>
+          <p>No tenants yet. Add your first one!</p>
+        </div>
+      </div>
+    </div>
+    <div id="tab-items" class="tab-pane"><div class="section-header"><h2>Items</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Items module — content loads here</p></div></div></div><div id="tab-models" class="tab-pane"><div class="section-header"><h2>Models</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Models module — content loads here</p></div></div></div><div id="tab-performance" class="tab-pane"><div class="section-header"><h2>Performance</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Performance module — content loads here</p></div></div></div>
+  </div>
+</div>
+
+<div class="modal" id="addModal">
+  <div class="modal-content">
+    <h2>Add Tenant</h2>
+    <div class="form-group"><label>ID</label><input type="text" id="field_id" placeholder="Enter id"></div><div class="form-group"><label>NAME</label><input type="text" id="field_name" placeholder="Enter name"></div><div class="form-group"><label>PLAN</label><input type="text" id="field_plan" placeholder="Enter plan"></div><div class="form-group"><label>CONFIG</label><input type="text" id="field_config" placeholder="Enter config"></div>
+    <div style="display:flex;gap:10px;margin-top:15px;">
+      <button class="btn btn-primary" onclick="addRecord()">Add</button>
+      <button class="btn" style="background:var(--border)" onclick="closeModal('addModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

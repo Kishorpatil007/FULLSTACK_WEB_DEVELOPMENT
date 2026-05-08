@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>179. Online SaaS Business Intelligence Tool</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-layout">
+  <aside class="sidebar">
+    <div style="padding:20px;border-bottom:1px solid var(--border);margin-bottom:15px;">
+      <div style="font-size:2rem;margin-bottom:5px;">📉</div>
+      <div style="font-size:.85rem;font-weight:700;color:var(--primary);">Project #179</div>
+      <div style="font-size:.75rem;color:#94a3b8;margin-top:3px;">Online SaaS Business Intelligence Tool</div>
+    </div>
+    <a href="#" class="sidebar-link" data-tab="dashboards">Dashboards</a>
+<a href="#" class="sidebar-link" data-tab="reports">Reports</a>
+<a href="#" class="sidebar-link" data-tab="kpis">KPIs</a>
+<a href="#" class="sidebar-link" data-tab="data sources">Data Sources</a>
+  </aside>
+  <div class="main-content">
+    <div id="tab-overview" class="tab-pane active">
+      <div class="section-header">
+        <h2>📉 Online SaaS Business Intelligence Tool</h2>
+        <button class="btn btn-primary" onclick="openModal('addModal')">+ Add Dashboard</button>
+      </div>
+      <p style="color:#94a3b8;margin-bottom:25px;">SaaS business intelligence tool with drag-and-drop dashboards</p>
+      <div class="grid grid-4" style="margin-bottom:30px;">
+        <div class="card stat-card"><div class="stat-number">47</div><div class="stat-label">📊 Dashboards</div></div>
+<div class="card stat-card"><div class="stat-number">234</div><div class="stat-label">📄 Reports</div></div>
+<div class="card stat-card"><div class="stat-number">128</div><div class="stat-label">🎯 KPIs Tracked</div></div>
+<div class="card stat-card"><div class="stat-number">18</div><div class="stat-label">🗄️ Data Sources</div></div>
+      </div>
+      <div class="card">
+        <div class="section-header" style="margin-bottom:15px;">
+          <h3 style="font-size:1rem;color:var(--primary);">Dashboards List</h3>
+          <input type="text" id="searchInput" placeholder="Search..." style="padding:8px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text);border-radius:8px;font-size:.85rem;width:220px;" oninput="filterTable(this.value)">
+        </div>
+        <table id="dataTable">
+          <thead><tr><th>ID</th><th>NAME</th><th>WIDGETS</th><th>OWNER</th><th>SHARED</th><th>ACTIONS</th></tr></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div id="emptyState" class="empty" style="display:none;">
+          <div class="empty-icon">📉</div>
+          <p>No dashboards yet. Add your first one!</p>
+        </div>
+      </div>
+    </div>
+    <div id="tab-reports" class="tab-pane"><div class="section-header"><h2>Reports</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Reports module — content loads here</p></div></div></div><div id="tab-kpis" class="tab-pane"><div class="section-header"><h2>KPIs</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>KPIs module — content loads here</p></div></div></div><div id="tab-data sources" class="tab-pane"><div class="section-header"><h2>Data Sources</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Data Sources module — content loads here</p></div></div></div>
+  </div>
+</div>
+
+<div class="modal" id="addModal">
+  <div class="modal-content">
+    <h2>Add Dashboard</h2>
+    <div class="form-group"><label>ID</label><input type="text" id="field_id" placeholder="Enter id"></div><div class="form-group"><label>NAME</label><input type="text" id="field_name" placeholder="Enter name"></div><div class="form-group"><label>WIDGETS</label><input type="text" id="field_widgets" placeholder="Enter widgets"></div><div class="form-group"><label>OWNER</label><input type="text" id="field_owner" placeholder="Enter owner"></div><div class="form-group"><label>SHARED</label><input type="text" id="field_shared" placeholder="Enter shared"></div>
+    <div style="display:flex;gap:10px;margin-top:15px;">
+      <button class="btn btn-primary" onclick="addRecord()">Add</button>
+      <button class="btn" style="background:var(--border)" onclick="closeModal('addModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

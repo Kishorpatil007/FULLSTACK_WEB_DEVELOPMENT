@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>175. Online Smart Campus Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-layout">
+  <aside class="sidebar">
+    <div style="padding:20px;border-bottom:1px solid var(--border);margin-bottom:15px;">
+      <div style="font-size:2rem;margin-bottom:5px;">🏛️</div>
+      <div style="font-size:.85rem;font-weight:700;color:var(--primary);">Project #175</div>
+      <div style="font-size:.75rem;color:#94a3b8;margin-top:3px;">Online Smart Campus Portal</div>
+    </div>
+    <a href="#" class="sidebar-link" data-tab="departments">Departments</a>
+<a href="#" class="sidebar-link" data-tab="events">Events</a>
+<a href="#" class="sidebar-link" data-tab="resources">Resources</a>
+<a href="#" class="sidebar-link" data-tab="students">Students</a>
+  </aside>
+  <div class="main-content">
+    <div id="tab-overview" class="tab-pane active">
+      <div class="section-header">
+        <h2>🏛️ Online Smart Campus Portal</h2>
+        <button class="btn btn-primary" onclick="openModal('addModal')">+ Add Department</button>
+      </div>
+      <p style="color:#94a3b8;margin-bottom:25px;">Smart campus portal with facility management</p>
+      <div class="grid grid-4" style="margin-bottom:30px;">
+        <div class="card stat-card"><div class="stat-number">12</div><div class="stat-label">🏢 Departments</div></div>
+<div class="card stat-card"><div class="stat-number">47</div><div class="stat-label">📅 Events</div></div>
+<div class="card stat-card"><div class="stat-number">234</div><div class="stat-label">📦 Resources</div></div>
+<div class="card stat-card"><div class="stat-number">8,420</div><div class="stat-label">👨‍🎓 Students</div></div>
+      </div>
+      <div class="card">
+        <div class="section-header" style="margin-bottom:15px;">
+          <h3 style="font-size:1rem;color:var(--primary);">Departments List</h3>
+          <input type="text" id="searchInput" placeholder="Search..." style="padding:8px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text);border-radius:8px;font-size:.85rem;width:220px;" oninput="filterTable(this.value)">
+        </div>
+        <table id="dataTable">
+          <thead><tr><th>ID</th><th>NAME</th><th>HEAD</th><th>STUDENTS</th><th>ROOMS</th><th>ACTIONS</th></tr></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div id="emptyState" class="empty" style="display:none;">
+          <div class="empty-icon">🏛️</div>
+          <p>No departments yet. Add your first one!</p>
+        </div>
+      </div>
+    </div>
+    <div id="tab-events" class="tab-pane"><div class="section-header"><h2>Events</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Events module — content loads here</p></div></div></div><div id="tab-resources" class="tab-pane"><div class="section-header"><h2>Resources</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Resources module — content loads here</p></div></div></div><div id="tab-students" class="tab-pane"><div class="section-header"><h2>Students</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Students module — content loads here</p></div></div></div>
+  </div>
+</div>
+
+<div class="modal" id="addModal">
+  <div class="modal-content">
+    <h2>Add Department</h2>
+    <div class="form-group"><label>ID</label><input type="text" id="field_id" placeholder="Enter id"></div><div class="form-group"><label>NAME</label><input type="text" id="field_name" placeholder="Enter name"></div><div class="form-group"><label>HEAD</label><input type="text" id="field_head" placeholder="Enter head"></div><div class="form-group"><label>STUDENTS</label><input type="text" id="field_students" placeholder="Enter students"></div><div class="form-group"><label>ROOMS</label><input type="text" id="field_rooms" placeholder="Enter rooms"></div>
+    <div style="display:flex;gap:10px;margin-top:15px;">
+      <button class="btn btn-primary" onclick="addRecord()">Add</button>
+      <button class="btn" style="background:var(--border)" onclick="closeModal('addModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>154. Online Code Review Platform</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-layout">
+  <aside class="sidebar">
+    <div style="padding:20px;border-bottom:1px solid var(--border);margin-bottom:15px;">
+      <div style="font-size:2rem;margin-bottom:5px;">🔍</div>
+      <div style="font-size:.85rem;font-weight:700;color:var(--primary);">Project #154</div>
+      <div style="font-size:.75rem;color:#94a3b8;margin-top:3px;">Online Code Review Platform</div>
+    </div>
+    <a href="#" class="sidebar-link" data-tab="prs">PRs</a>
+<a href="#" class="sidebar-link" data-tab="reviews">Reviews</a>
+<a href="#" class="sidebar-link" data-tab="comments">Comments</a>
+<a href="#" class="sidebar-link" data-tab="stats">Stats</a>
+  </aside>
+  <div class="main-content">
+    <div id="tab-overview" class="tab-pane active">
+      <div class="section-header">
+        <h2>🔍 Online Code Review Platform</h2>
+        <button class="btn btn-primary" onclick="openModal('addModal')">+ Add Pr</button>
+      </div>
+      <p style="color:#94a3b8;margin-bottom:25px;">Code review platform with inline commenting and diff viewer</p>
+      <div class="grid grid-4" style="margin-bottom:30px;">
+        <div class="card stat-card"><div class="stat-number">28</div><div class="stat-label">📬 Open PRs</div></div>
+<div class="card stat-card"><div class="stat-number">142</div><div class="stat-label">✅ Reviews Done</div></div>
+<div class="card stat-card"><div class="stat-number">560</div><div class="stat-label">💬 Comments</div></div>
+<div class="card stat-card"><div class="stat-number">89</div><div class="stat-label">🔀 Merged</div></div>
+      </div>
+      <div class="card">
+        <div class="section-header" style="margin-bottom:15px;">
+          <h3 style="font-size:1rem;color:var(--primary);">Prs List</h3>
+          <input type="text" id="searchInput" placeholder="Search..." style="padding:8px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text);border-radius:8px;font-size:.85rem;width:220px;" oninput="filterTable(this.value)">
+        </div>
+        <table id="dataTable">
+          <thead><tr><th>ID</th><th>TITLE</th><th>AUTHOR</th><th>STATUS</th><th>DIFF</th><th>ACTIONS</th></tr></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div id="emptyState" class="empty" style="display:none;">
+          <div class="empty-icon">🔍</div>
+          <p>No prs yet. Add your first one!</p>
+        </div>
+      </div>
+    </div>
+    <div id="tab-reviews" class="tab-pane"><div class="section-header"><h2>Reviews</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Reviews module — content loads here</p></div></div></div><div id="tab-comments" class="tab-pane"><div class="section-header"><h2>Comments</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Comments module — content loads here</p></div></div></div><div id="tab-stats" class="tab-pane"><div class="section-header"><h2>Stats</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Stats module — content loads here</p></div></div></div>
+  </div>
+</div>
+
+<div class="modal" id="addModal">
+  <div class="modal-content">
+    <h2>Add Pr</h2>
+    <div class="form-group"><label>ID</label><input type="text" id="field_id" placeholder="Enter id"></div><div class="form-group"><label>TITLE</label><input type="text" id="field_title" placeholder="Enter title"></div><div class="form-group"><label>AUTHOR</label><input type="text" id="field_author" placeholder="Enter author"></div><div class="form-group"><label>STATUS</label><input type="text" id="field_status" placeholder="Enter status"></div><div class="form-group"><label>DIFF</label><input type="text" id="field_diff" placeholder="Enter diff"></div>
+    <div style="display:flex;gap:10px;margin-top:15px;">
+      <button class="btn btn-primary" onclick="addRecord()">Add</button>
+      <button class="btn" style="background:var(--border)" onclick="closeModal('addModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

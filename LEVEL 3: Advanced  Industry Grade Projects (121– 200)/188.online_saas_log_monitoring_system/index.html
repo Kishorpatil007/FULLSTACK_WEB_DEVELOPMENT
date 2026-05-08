@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>188. Online SaaS Log Monitoring System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-layout">
+  <aside class="sidebar">
+    <div style="padding:20px;border-bottom:1px solid var(--border);margin-bottom:15px;">
+      <div style="font-size:2rem;margin-bottom:5px;">📋</div>
+      <div style="font-size:.85rem;font-weight:700;color:var(--primary);">Project #188</div>
+      <div style="font-size:.75rem;color:#94a3b8;margin-top:3px;">Online SaaS Log Monitoring System</div>
+    </div>
+    <a href="#" class="sidebar-link" data-tab="logs">Logs</a>
+<a href="#" class="sidebar-link" data-tab="search">Search</a>
+<a href="#" class="sidebar-link" data-tab="alerts">Alerts</a>
+<a href="#" class="sidebar-link" data-tab="dashboards">Dashboards</a>
+  </aside>
+  <div class="main-content">
+    <div id="tab-overview" class="tab-pane active">
+      <div class="section-header">
+        <h2>📋 Online SaaS Log Monitoring System</h2>
+        <button class="btn btn-primary" onclick="openModal('addModal')">+ Add Log</button>
+      </div>
+      <p style="color:#94a3b8;margin-bottom:25px;">SaaS log monitoring system with real-time search and alerts</p>
+      <div class="grid grid-4" style="margin-bottom:30px;">
+        <div class="card stat-card"><div class="stat-number">84M</div><div class="stat-label">📋 Log Events</div></div>
+<div class="card stat-card"><div class="stat-number">2.4GB/hr</div><div class="stat-label">⚡ Ingestion</div></div>
+<div class="card stat-card"><div class="stat-number">12</div><div class="stat-label">🚨 Alerts</div></div>
+<div class="card stat-card"><div class="stat-number">30d</div><div class="stat-label">📅 Retention</div></div>
+      </div>
+      <div class="card">
+        <div class="section-header" style="margin-bottom:15px;">
+          <h3 style="font-size:1rem;color:var(--primary);">Logs List</h3>
+          <input type="text" id="searchInput" placeholder="Search..." style="padding:8px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text);border-radius:8px;font-size:.85rem;width:220px;" oninput="filterTable(this.value)">
+        </div>
+        <table id="dataTable">
+          <thead><tr><th>ID</th><th>SERVICE</th><th>LEVEL</th><th>MESSAGE</th><th>TIMESTAMP</th><th>ACTIONS</th></tr></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div id="emptyState" class="empty" style="display:none;">
+          <div class="empty-icon">📋</div>
+          <p>No logs yet. Add your first one!</p>
+        </div>
+      </div>
+    </div>
+    <div id="tab-search" class="tab-pane"><div class="section-header"><h2>Search</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Search module — content loads here</p></div></div></div><div id="tab-alerts" class="tab-pane"><div class="section-header"><h2>Alerts</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Alerts module — content loads here</p></div></div></div><div id="tab-dashboards" class="tab-pane"><div class="section-header"><h2>Dashboards</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Dashboards module — content loads here</p></div></div></div>
+  </div>
+</div>
+
+<div class="modal" id="addModal">
+  <div class="modal-content">
+    <h2>Add Log</h2>
+    <div class="form-group"><label>ID</label><input type="text" id="field_id" placeholder="Enter id"></div><div class="form-group"><label>SERVICE</label><input type="text" id="field_service" placeholder="Enter service"></div><div class="form-group"><label>LEVEL</label><input type="text" id="field_level" placeholder="Enter level"></div><div class="form-group"><label>MESSAGE</label><input type="text" id="field_message" placeholder="Enter message"></div><div class="form-group"><label>TIMESTAMP</label><input type="text" id="field_timestamp" placeholder="Enter timestamp"></div>
+    <div style="display:flex;gap:10px;margin-top:15px;">
+      <button class="btn btn-primary" onclick="addRecord()">Add</button>
+      <button class="btn" style="background:var(--border)" onclick="closeModal('addModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

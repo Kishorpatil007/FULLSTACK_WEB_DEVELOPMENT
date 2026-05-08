@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>194. Online SaaS Enterprise Search Engine</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-layout">
+  <aside class="sidebar">
+    <div style="padding:20px;border-bottom:1px solid var(--border);margin-bottom:15px;">
+      <div style="font-size:2rem;margin-bottom:5px;">🔎</div>
+      <div style="font-size:.85rem;font-weight:700;color:var(--primary);">Project #194</div>
+      <div style="font-size:.75rem;color:#94a3b8;margin-top:3px;">Online SaaS Enterprise Search Engine</div>
+    </div>
+    <a href="#" class="sidebar-link" data-tab="indices">Indices</a>
+<a href="#" class="sidebar-link" data-tab="queries">Queries</a>
+<a href="#" class="sidebar-link" data-tab="results">Results</a>
+<a href="#" class="sidebar-link" data-tab="analytics">Analytics</a>
+  </aside>
+  <div class="main-content">
+    <div id="tab-overview" class="tab-pane active">
+      <div class="section-header">
+        <h2>🔎 Online SaaS Enterprise Search Engine</h2>
+        <button class="btn btn-primary" onclick="openModal('addModal')">+ Add Indice</button>
+      </div>
+      <p style="color:#94a3b8;margin-bottom:25px;">SaaS enterprise search engine with intelligent ranking</p>
+      <div class="grid grid-4" style="margin-bottom:30px;">
+        <div class="card stat-card"><div class="stat-number">24M</div><div class="stat-label">📄 Documents</div></div>
+<div class="card stat-card"><div class="stat-number">840K</div><div class="stat-label">🔎 Queries/Day</div></div>
+<div class="card stat-card"><div class="stat-number">8ms</div><div class="stat-label">⚡ Avg Latency</div></div>
+<div class="card stat-card"><div class="stat-number">96%</div><div class="stat-label">🎯 Relevance</div></div>
+      </div>
+      <div class="card">
+        <div class="section-header" style="margin-bottom:15px;">
+          <h3 style="font-size:1rem;color:var(--primary);">Indices List</h3>
+          <input type="text" id="searchInput" placeholder="Search..." style="padding:8px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text);border-radius:8px;font-size:.85rem;width:220px;" oninput="filterTable(this.value)">
+        </div>
+        <table id="dataTable">
+          <thead><tr><th>ID</th><th>NAME</th><th>DOCCOUNT</th><th>SIZE</th><th>STATUS</th><th>ACTIONS</th></tr></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div id="emptyState" class="empty" style="display:none;">
+          <div class="empty-icon">🔎</div>
+          <p>No indices yet. Add your first one!</p>
+        </div>
+      </div>
+    </div>
+    <div id="tab-queries" class="tab-pane"><div class="section-header"><h2>Queries</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Queries module — content loads here</p></div></div></div><div id="tab-results" class="tab-pane"><div class="section-header"><h2>Results</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Results module — content loads here</p></div></div></div><div id="tab-analytics" class="tab-pane"><div class="section-header"><h2>Analytics</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Analytics module — content loads here</p></div></div></div>
+  </div>
+</div>
+
+<div class="modal" id="addModal">
+  <div class="modal-content">
+    <h2>Add Indice</h2>
+    <div class="form-group"><label>ID</label><input type="text" id="field_id" placeholder="Enter id"></div><div class="form-group"><label>NAME</label><input type="text" id="field_name" placeholder="Enter name"></div><div class="form-group"><label>DOCCOUNT</label><input type="text" id="field_docCount" placeholder="Enter docCount"></div><div class="form-group"><label>SIZE</label><input type="text" id="field_size" placeholder="Enter size"></div><div class="form-group"><label>STATUS</label><input type="text" id="field_status" placeholder="Enter status"></div>
+    <div style="display:flex;gap:10px;margin-top:15px;">
+      <button class="btn btn-primary" onclick="addRecord()">Add</button>
+      <button class="btn" style="background:var(--border)" onclick="closeModal('addModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

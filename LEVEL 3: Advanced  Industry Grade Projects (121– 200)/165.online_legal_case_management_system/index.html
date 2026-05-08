@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>165. Online Legal Case Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-layout">
+  <aside class="sidebar">
+    <div style="padding:20px;border-bottom:1px solid var(--border);margin-bottom:15px;">
+      <div style="font-size:2rem;margin-bottom:5px;">⚖️</div>
+      <div style="font-size:.85rem;font-weight:700;color:var(--primary);">Project #165</div>
+      <div style="font-size:.75rem;color:#94a3b8;margin-top:3px;">Online Legal Case Management System</div>
+    </div>
+    <a href="#" class="sidebar-link" data-tab="cases">Cases</a>
+<a href="#" class="sidebar-link" data-tab="clients">Clients</a>
+<a href="#" class="sidebar-link" data-tab="hearings">Hearings</a>
+<a href="#" class="sidebar-link" data-tab="documents">Documents</a>
+  </aside>
+  <div class="main-content">
+    <div id="tab-overview" class="tab-pane active">
+      <div class="section-header">
+        <h2>⚖️ Online Legal Case Management System</h2>
+        <button class="btn btn-primary" onclick="openModal('addModal')">+ Add Case</button>
+      </div>
+      <p style="color:#94a3b8;margin-bottom:25px;">Legal case management system with document tracking</p>
+      <div class="grid grid-4" style="margin-bottom:30px;">
+        <div class="card stat-card"><div class="stat-number">234</div><div class="stat-label">⚖️ Active Cases</div></div>
+<div class="card stat-card"><div class="stat-number">890</div><div class="stat-label">👤 Clients</div></div>
+<div class="card stat-card"><div class="stat-number">47</div><div class="stat-label">📅 Hearings</div></div>
+<div class="card stat-card"><div class="stat-number">3,420</div><div class="stat-label">📂 Documents</div></div>
+      </div>
+      <div class="card">
+        <div class="section-header" style="margin-bottom:15px;">
+          <h3 style="font-size:1rem;color:var(--primary);">Cases List</h3>
+          <input type="text" id="searchInput" placeholder="Search..." style="padding:8px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text);border-radius:8px;font-size:.85rem;width:220px;" oninput="filterTable(this.value)">
+        </div>
+        <table id="dataTable">
+          <thead><tr><th>ID</th><th>TITLE</th><th>TYPE</th><th>STATUS</th><th>CLIENTID</th><th>ACTIONS</th></tr></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div id="emptyState" class="empty" style="display:none;">
+          <div class="empty-icon">⚖️</div>
+          <p>No cases yet. Add your first one!</p>
+        </div>
+      </div>
+    </div>
+    <div id="tab-clients" class="tab-pane"><div class="section-header"><h2>Clients</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Clients module — content loads here</p></div></div></div><div id="tab-hearings" class="tab-pane"><div class="section-header"><h2>Hearings</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Hearings module — content loads here</p></div></div></div><div id="tab-documents" class="tab-pane"><div class="section-header"><h2>Documents</h2></div><div class="card"><div class="empty"><div class="empty-icon">📊</div><p>Documents module — content loads here</p></div></div></div>
+  </div>
+</div>
+
+<div class="modal" id="addModal">
+  <div class="modal-content">
+    <h2>Add Case</h2>
+    <div class="form-group"><label>ID</label><input type="text" id="field_id" placeholder="Enter id"></div><div class="form-group"><label>TITLE</label><input type="text" id="field_title" placeholder="Enter title"></div><div class="form-group"><label>TYPE</label><input type="text" id="field_type" placeholder="Enter type"></div><div class="form-group"><label>STATUS</label><input type="text" id="field_status" placeholder="Enter status"></div><div class="form-group"><label>CLIENTID</label><input type="text" id="field_clientId" placeholder="Enter clientId"></div>
+    <div style="display:flex;gap:10px;margin-top:15px;">
+      <button class="btn btn-primary" onclick="addRecord()">Add</button>
+      <button class="btn" style="background:var(--border)" onclick="closeModal('addModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
